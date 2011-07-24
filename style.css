@@ -1,0 +1,473 @@
+/**   
+ * Theme Name: Elegant - for Katherine Kendall Salon & Spa 
+ * Theme URI: 
+ * Description: An elegant theme expressing the ambience of Katherine Kendall Salon & Spa.
+ * Author: Dave Doolin
+ * Author URI: http://inventiumsystems.com/
+ * Template: thematic
+ * Version: 0.1
+ * Tags: Thematic, Katherine Kendall, David Doolin
+ * Thematic is © Ian Stewart http://themeshaper.com/
+ */
+
+/* Reset browser defaults */
+@import url('../thematic/library/styles/reset.css');
+
+/* Apply basic typography styles */
+@import url('../thematic/library/styles/typography.css');
+
+/* Apply a basic layout */
+@import url('../thematic/library/layouts/2c-r-fixed.css');
+
+/* Apply basic image styles */
+@import url('../thematic/library/styles/images.css');
+
+/* Apply default theme styles and colors */
+/* It's better to actually copy over default.css into 
+ * this file (or link to a copy in your child theme) 
+ * if you're going to do anything outrageous 
+ */
+@import url('../thematic/library/styles/default.css');
+
+/* Prepare theme for plugins */
+@import url('../thematic/library/styles/plugins.css');
+
+
+/** 
+ * Overrides from 2c-r-fixed.css
+ * Don't mess too much with these.
+ */
+
+body {
+    min-width:940px;
+}
+#header {
+    position:relative;
+}
+#branding {
+    width:900px;
+    margin:0 auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#access {
+    position:relative;
+    overflow:hidden;
+}
+.menu {
+    width:900px;
+    margin:0 auto;
+}
+#main {
+    width:920px;
+    padding-top: 15px;
+    margin:0 auto;
+    overflow:hidden;
+    position:relative;
+}
+#container {
+    width:580px;
+    float:left;
+}
+#content {
+    margin:0 0 0 10px;
+    width:560px;
+    overflow:hidden;
+}
+.main-aside {
+    width:300px;
+    float:right;
+    position:relative;
+    right:10px;
+}
+#secondary {
+    clear:right;
+}
+#footer {    
+    clear:both;
+}
+#subsidiary {
+    width:900px;
+    margin:0 auto;
+    overflow:hidden;
+}
+#subsidiary .aside {
+    width:300px;
+    float:left;
+    margin:0 20px 0 0;
+}
+#subsidiary #third {
+    margin:0;
+}
+#siteinfo {
+    clear:both;
+    width:900px;
+    margin:0 auto;
+}
+
+/* =Page Templates
+-------------------------------------------------------------- */
+
+/*
+    Full Width Template
+*/
+
+.page-template-template-page-fullwidth-php #container {
+  margin:0;
+  width:900px;
+}
+
+.page-template-template-page-fullwidth-php #content {
+  margin: 0 0 0 10px;
+  width:900px;
+}
+
+.page-template-template-page-fullwidth-php #comments {
+    width:500px;
+}
+
+
+
+/**
+ *   COMMENTED OUT STUFF
+ */
+
+/*
+*/
+
+#access {
+  border: none;
+  font-size: 13px;
+  height: 42px;
+  overflow: visible;
+  z-index: 100;
+	margin: 10px 0 10px 0px;
+  background-position: 50% 0%;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+/*
+html body.home div#wrapper.hfeed div#header div#access div.menu {
+	width: 900px;
+}
+
+#blog-title a:active, #blog-title a:hover {
+  color: #0000ff;
+}
+
+#blog-title {visibility: hidden;}
+#blog-description {visibility: hidden;}
+*/
+
+
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+  background: none repeat scroll 0 0 transparent;
+  outline: 0 none;
+}
+	 
+.menu {
+  margin: 0 auto;
+}
+
+.sf-menu {
+  border: none;
+  float: left;
+}
+
+.sf-menu li {
+	border: none;
+	background-color: transparent;
+	height: 42px;
+}
+
+.sf-menu li ul{
+	border: none;
+	background-color: transparent;
+	margin-top:10px;
+ -webkit-box-shadow: 2px 2px 8px #aaa;
+ -moz-box-shadow: 2px 2px 8px #aaa;
+	box-shadow: 2px 2px 8px #aaa;
+	-pie-box-shadow: #aaa 2px 2px 8px;
+}
+
+.menu ul.children li.page_item {
+  background-color:#ddd;
+}
+
+.menu ul.children li.page_item a {
+	font-size:14px;
+	color: #000;
+}
+
+.menu ul.children li.page_item a:hover {
+	font-size:14px;
+	color: #fff;
+}
+
+.sf-menu li:hover {
+/*  background-image: url(./images/menu-hover.png); */
+	background-position: 0% 0%;
+	background-repeat: repeat-x;
+}
+
+.windows .sf-menu a {
+	border: none;
+	background-color: transparent;
+	font-family: Arial, Helvetica, Tahoma, Geneva, sans-serif;
+	font-size: 17px;
+	color: #ffffff;
+	padding: 13px 12px 12px 12px;
+}
+
+/*
+#container {
+  float: left;
+  width: 500px;
+}
+
+#content {
+  margin: 0px 0px 0px 5px;
+  overflow: hidden;
+  width: 480px;
+}
+
+.post {
+  padding-bottom: 15px;
+}
+
+.entry-content {
+  padding: 5px 0 0;
+}
+
+.entry-title {
+  font-family: Georgia,sans-serif;
+  font-size: 35px;
+  font-weight: normal;
+  line-height: 26px;
+  padding: 0 0 7px;
+	color: #cc0029;
+	text-shadow: 2px 2px 2px #BBBBBB;
+}
+
+.entry-content h1, .entry-content h2 {
+  font-family: Georgia,sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  padding: 12px 0 1px;
+	color: #7c17b0;
+	text-shadow: 2px 2px 2px #BBBBBB;
+}
+
+hr {
+  background-color: #f4d5b0;
+  border: 0 none;
+  color: #f4d5b0;
+  height: 1px;
+  margin-bottom: 6px;
+}
+
+.main-aside {
+  float: right; 
+  position: relative;
+  right: 0px;
+  width: 217px;
+}
+
+
+
+.aside h3 {
+  font-size: 18px;
+  font-style: normal;
+  font-family: Georgia,sans-serif;
+  line-height: 22px;
+  background-image: url(./images/widget-header.png);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  padding: 7px 10px 6px;
+  color: #88001b;
+}
+
+.widgetcontainer {
+  background-color: #fff;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  -webkit-box-shadow: 2px 2px 15px #999;
+  -moz-box-shadow: 2px 2px 15px #999;
+  box-shadow: 2px 2px 15px #999;
+  -pie-box-shadow: #999 2px 2px 15px;
+}
+
+.main-aside ul {
+  padding: 0px;
+}
+
+.main-aside ul ul {
+  padding: 5px;
+}
+
+#primary {
+  border: none;
+  margin-bottom: 0px;
+  padding: 0;
+  font-size: 14px;
+}
+
+.aside ul ul {
+  list-style: disc outside none;
+  margin: 0 0 2px 17px;
+}
+
+.aside form {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.aside table {
+  margin: 5px;
+  padding: 5px;
+  font-size: 10px;
+  color:#000;
+  border:none;
+}
+
+.aside table th, .aside table td, .aside table tr {
+  border:none;
+}
+
+.aside div.textwidget {
+  color:#000;
+  padding: 0;
+}
+
+.aside div.textwidget p, .aside div.textwidget div {
+  color:#000;
+  padding: 5px 10px;
+}
+
+.aside p, .aside ul, .aside ol, .aside dd, .aside pre {
+  margin-bottom: 0;
+}
+
+.aside ul ul ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.aside a:link, .aside a:visited {
+  color: #88001b;
+  text-decoration: none;
+}
+
+.aside a:hover {
+  color: #630096;
+}
+
+.aside a:active {
+  color: #88001b;
+  text-decoration: none;
+}
+
+
+.entry-content ul li {
+  list-style: disc outside url(./images/bullets.png);
+  margin: 0 0 0 5px;
+  padding: 0;
+  line-height: 22px;
+}
+
+.aside ul.xoxo li ul li {
+  list-style: disc outside url(./images/red-bullet.png);
+  margin: 0 0 0 5px;
+  padding: 0;
+  line-height: 22px;
+}
+
+.aside ul.xoxo li ul li:hover {
+  list-style: disc outside url(./images/bullets.png);
+  margin: 0 0 0 5px;
+  padding: 0;
+  line-height: 22px;
+}
+
+.calendar_wrap {
+  margin:5px;
+}
+
+*/
+
+
+/**
+ *   END OF REBUILD
+ */
+
+
+/* footer */
+/*
+#footer {
+  border: none;
+  margin: 0;
+  bottom:0px;
+  position:absolute;
+  width:100%;
+  margin-top:-255px;
+}
+*/
+
+/*
+#siteinfo {
+  background-image: url(./images/footer-images.png);
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-color: #000;
+  width: 890px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 115px 10px 10px 10px;
+  text-align: center;
+}
+
+#siteinfo a:active, #siteinfo a:hover {
+  color: #f0b46c;
+}
+
+#siteinfo a {
+  color: #E17A00;
+}
+*/
+
+
+/**
+ * Tools and widgets.
+ */
+
+div.billboard {
+  background-color: #cf00cf;
+ -webkit-box-shadow: 5px 5px 5px #888; 
+ -moz-box-shadow: 5px 5px 5px #888; 
+  box-shadow: 5px 5px 5px #888;   
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ -khtml-border-radius: 7px;    
+/*
+  text-shadow: #FFE 1px 1px 0px; 
+  outline-color: #1B1818;
+ */
+  border: solid 1px;
+  width: 30%;
+  float: right;
+  margin: 7px;
+  padding: 7px;
+}
+
+
+div#haircut-price-table {
+  text-align: center;
+}
+
+table.price-table {
+  margin-left: 30%;
+  background-color: #eee;
+}
