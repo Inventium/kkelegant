@@ -184,7 +184,12 @@ EOF;
 add_filter('thematic_footertext', 'kk_footer');
 */
 
-
+function kk_format_link($url, $anchor, $class = '', $title = '') {
+    $link = <<<EOL
+    <a href="$url" class="$class" title="$title">$anchor</a>
+EOL;
+    return $link;
+}
 
 define('KK_TEMPLATEPATH', get_theme_root() . '/kkelegant');
 

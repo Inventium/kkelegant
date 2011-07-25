@@ -38,42 +38,31 @@
             thematic_post_class();
             echo '">';
           }
-                  
-                  // creating the post header
-                  thematic_postheader();
-                  
-                  ?>
-                  
+            // creating the post header
+            thematic_postheader();
+          ?>
+
           <div class="entry-content">
-  
-                      <?php
-                      
-                      the_content();
-                      
-                      wp_link_pages("\t\t\t\t\t<div class='page-link'>".__('Pages: ', 'thematic'), "</div>\n", 'number');
-                                            
-                      ?>
-  
+            <?php the_content(); ?>
           </div><!-- .entry-content -->
         </div><!-- #post -->
-  
+
           <?php
-          
+    global $wp_query;
+    $bc = get_terms('brand');
+    foreach($bc as $brand){
+        echo '<div class="post taxonomy brand">';
+        echo '<h2 class="entry_title">';        
+        echo kk_format_link(get_term_link( $brand), $brand->name, '', ''); 
+        echo '</h2>';
+        echo '<div class="entry_content">';
+        echo $brand->description;
+        echo '</div></div>';
+    }
+
           thematic_belowpost();
-/*          
-          // calling the comments template
-     if (THEMATIC_COMPATIBLE_COMMENT_HANDLING) {
-        if ( get_post_custom_values('comments') ) {
-          // Add a key/value of "comments" to enable comments on pages!
-          thematic_comments_template();
-        }
-      } else {
-        thematic_comments_template();
-      }
-*/          
           // calling the widget area 'page-bottom'
-          get_sidebar('page-bottom');
-          
+          //get_sidebar('page-bottom');          
           ?>
   
       </div><!-- #content -->
