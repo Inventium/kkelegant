@@ -163,4 +163,62 @@ EOD;
 } 
 add_shortcode('waxing-price-list','kk_waxing_price_list');
 
+
+function kk_facebody_price_list() {
+
+  $default = 'n/a';
+  $options = get_option('kkelegant_options');
+
+  $microzone30  = (isset($options['microzone30']))  ? $options['microzone30']  : $default;
+  $facial30     = (isset($options['facial30']))     ? $options['facial30']     : $default;
+  $facial60     = (isset($options['facial60']))     ? $options['facial60']     : $default;
+  $facial75     = (isset($options['facial75']))     ? $options['facial75']     : $default;
+  $back30       = (isset($options['back30']))       ? $options['back30']       : $default;
+  $bodymasque60 = (isset($options['bodymasque60'])) ? $options['bodymasque60'] : $default;
+  $bodyglow30   = (isset($options['bodyglow30']))   ? $options['bodyglow30']   : $default;
+
+  $prices = <<<EOD
+<div id="facebody-price-table">
+<table class="price-table">
+<tbody>
+<tr>
+<th>Face & Body</td>
+<th>Price</td>
+</tr>
+<tr>
+<td>Microzone treatment - 30 m</td>
+<td>$microzone30</td>
+</tr>
+<tr>
+<td>Facial - 30 m</td>
+<td>$facial30</td>
+</tr>
+<tr>
+<td>Facial - 60 m</td>
+<td>$facial60</td>
+</tr>
+<tr>
+<td>Facial - 75 m</td>
+<td>$facial75</td>
+</tr>
+<tr>
+<td>Back - 30 m</td>
+<td>$back30</td>
+</tr>
+<tr>
+<td>Body Masque - 60 m</td>
+<td>$bodymasque60</td>
+</tr>
+<tr>
+<td>Body Glow - 30 m</td>
+<td>$bodyglow30</td>
+</tr>
+</tbody>
+</table>
+</div>
+EOD;
+  return $prices;
+}
+add_shortcode('facebody-price-list','kk_facebody_price_list');
+
 ?>

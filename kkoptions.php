@@ -54,7 +54,14 @@ EOD;
                     'chest'              => '40',
                     'massage90'          => '125',
                     'massage60'          => '80',
-                    'massage30'          => '55');
+                    'massage30'          => '55',
+                    'microzone30'        => '25',
+                    'facial30'           => '55',
+                    'facial60'           => '80',
+                    'facial75'           => '90',
+                    'back30'             => '60',
+                    'bodymasque60'       => '95',
+                    'bodyglow30'         => '60');
     
   return $options;
 }
@@ -346,14 +353,66 @@ function kk_massage60() {
   ";
 }
 
-function kk_massage30() {
 
+function kk_massage30() {
   $options = get_option('kkelegant_options');
   echo "
   <input id='kk_massage30' name='kkelegant_options[massage30]' size='20' type='text' value='{$options['massage30']}' />
   ";
 }
 
+
+function kk_microzone30() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_microzone30' name='kkelegant_options[microzone30]' size='20' type='text' value='{$options['microzone30']}' />
+  ";
+}
+
+
+function kk_facial30() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_facial30' name='kkelegant_options[facial30]' size='20' type='text' value='{$options['facial30']}' />
+  ";
+}
+
+function kk_facial60() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_facial60' name='kkelegant_options[facial60]' size='20' type='text' value='{$options['facial60']}' />
+  ";
+}
+
+
+function kk_facial75() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_facial75' name='kkelegant_options[facial75]' size='20' type='text' value='{$options['facial75']}' />
+  ";
+}
+
+
+function kk_back30() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_back30' name='kkelegant_options[back30]' size='20' type='text' value='{$options['back30']}' />
+  ";
+}
+
+function kk_bodymasque60() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_bodymasque60' name='kkelegant_options[bodymasque60]' size='20' type='text' value='{$options['bodymasque60']}' />
+  ";
+}
+
+function kk_bodyglow30() {
+  $options = get_option('kkelegant_options');
+  echo "
+  <input id='kk_bodyglow30' name='kkelegant_options[bodyglow30]' size='20' type='text' value='{$options['bodyglow30']}' />
+  ";
+}
 
 
 function kk_haircut_text() {?>
@@ -409,15 +468,16 @@ function kk_register_mysettings() {
    add_settings_field('massage30', "Massage - 30 m" ,'kk_massage30', $kk_options_file, 'kkmassage');
 
 
+   add_settings_section('kkfaceandbody', '', 'kk_faceandbody_text', $kk_options_file);
+   add_settings_field('microzone30', "Microzone - 30 m" ,'kk_microzone30', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('facial30', "Facial - 30 m" ,'kk_facial30', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('facial60', "Facial - 60 m" ,'kk_facial60', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('facial75', "Facial - 75 m" ,'kk_facial75', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('back30', "Back - 30 m" ,'kk_back30', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('bodymasque60', "Body Masque - 60 m" ,'kk_bodymasque60', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('bodyglow30', "Body Glow - 30 m" ,'kk_bodyglow0', $kk_options_file, 'kkfaceandbody');
 
-   //add_settings_section('kkfaceandbody', '', 'kk_faceandbody_text', $kk_options_file);
-   //add_settings_section('kkspecialties', '', 'kk_specialties_text', $kk_options_file);        
-   
-
-
-   
-   //add_settings_field('hrecipe_border_color', __('Border color', 'hrecipe'), array($this,'border_color'), $hrecipe_options_file, 'hrecipe_styling');        
-   //add_settings_field('hrecipe_background_color', 'Background color', array($this,'background_color'), $hrecipe_options_file, 'hrecipe_styling');        
+   //add_settings_section('kkspecialties', '', 'kk_specialties_text', $kk_options_file);
 }
 
 function kk_postbox_fields($id, $title, $content, $section) {
@@ -473,7 +533,7 @@ function kk_facebody_section_text() {
 
   $sectiontext = <<<EOP
 <p>
-Set all your Face & Bodies prices here.
+Set all your Face & Body prices here.
 </p>
 EOP;
   return $sectiontext;
@@ -530,8 +590,8 @@ function kk_pricing_admin() {?>
                  kk_options_save_button();
                  kk_postbox_fields('kkfaceandbody', 'Face and body', kk_facebody_section_text(), 'kkfaceandbody'); 
                  kk_options_save_button();
-                 kk_postbox_fields('kkspecialties', 'Specialties', kk_specialties_section_text(), 'kkspecialties'); 
-                 kk_options_save_button();
+                 //kk_postbox_fields('kkspecialties', 'Specialties', kk_specialties_section_text(), 'kkspecialties');
+                 //kk_options_save_button();
                ?>
 
             </div>
