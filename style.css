@@ -138,6 +138,8 @@ body {
 
 #access {
 /*  border: none; */
+  border: solid 3px #4d0052;
+  width: 894px;
   font-size: 15px;
   height: 42px;
   margin:auto;
