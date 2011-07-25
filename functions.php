@@ -167,6 +167,16 @@ function kk_create_service_type() {
 }
 add_action( 'init', 'kk_create_service_type' );
 
+
+
+function remove_widgetized_area($content) {
+  unset($content['Secondary Aside']);
+  return $content;
+}
+add_filter('thematic_widgetized_areas', 'remove_widgetized_area');
+
+
+
 //customizar footer
 function kk_footer($thm_footertext) {
 
