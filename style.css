@@ -404,16 +404,17 @@ hr {
 
 
 /* footer */
-/*
+
 #footer {
+  background-image: url(./images/kk_footer.png);
+  background-position:top left;
+  background-repeat:no-repeat;
   border: none;
-  margin: 0;
+  padding-top:60px;
+  margin: auto;
   bottom:0px;
-  position:absolute;
-  width:100%;
-  margin-top:-255px;
+  width:900px;
 }
-*/
 
 /*
 #siteinfo {
