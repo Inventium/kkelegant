@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Template Name: Product Link Page
+ */
     // calling the header.php
     get_header();
 
@@ -48,8 +51,8 @@
                       the_content();
                       
                       wp_link_pages("\t\t\t\t\t<div class='page-link'>".__('Pages: ', 'thematic'), "</div>\n", 'number');
-                      
-                      edit_post_link(__('Edit', 'thematic'),'<span class="edit-link">','</span>') ?>
+                                            
+                      ?>
   
           </div><!-- .entry-content -->
         </div><!-- #post -->
@@ -57,9 +60,9 @@
           <?php
           
           thematic_belowpost();
-          
+/*          
           // calling the comments template
-          if (THEMATIC_COMPATIBLE_COMMENT_HANDLING) {
+     if (THEMATIC_COMPATIBLE_COMMENT_HANDLING) {
         if ( get_post_custom_values('comments') ) {
           // Add a key/value of "comments" to enable comments on pages!
           thematic_comments_template();
@@ -67,7 +70,7 @@
       } else {
         thematic_comments_template();
       }
-          
+*/          
           // calling the widget area 'page-bottom'
           get_sidebar('page-bottom');
           
