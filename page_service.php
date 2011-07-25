@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Product Link Page
+ * Template Name: Service Link Page
  */
     // calling the header.php
     get_header();
@@ -48,17 +48,21 @@
         </div><!-- #post -->
 
           <?php
-    global $wp_query;
-    $bc = get_terms('brand');
-    foreach($bc as $brand){
-        echo '<div class="post taxonomy brand">';
-        echo '<h2 class="entry_title">';        
-        echo kk_format_link(get_term_link( $brand), $brand->name, '', ''); 
-        echo '</h2>';
-        echo '<div class="entry_content">';
-        echo $brand->description;
-        echo '</div></div>';
-    }
+
+          $args = array( 'post_type' => 'service');
+          $the_query = new WP_Query( $args );
+          // The Loop
+          while ( $the_query->have_posts() ) : $the_query->the_post();
+              echo '<h2>';
+              echo kk_format_link(get_permalink( $brand), get_the_title(), '', '');
+              echo '</h2>';
+              the_excerpt();
+          endwhile;
+
+// Reset Post Data
+wp_reset_postdata();
+
+
 
           thematic_belowpost();
           // calling the widget area 'page-bottom'

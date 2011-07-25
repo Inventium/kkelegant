@@ -53,7 +53,7 @@
     foreach($bc as $brand){
         echo '<div class="post taxonomy brand">';
         echo '<h2 class="entry_title">';        
-        echo kk_format_link(get_term_link( $brand), $brand->name, '', ''); 
+        echo kk_format_link(get_term_link( $brand), $brand->name, '', '');
         echo '</h2>';
         echo '<div class="entry_content">';
         echo $brand->description;

@@ -137,11 +137,12 @@ body {
 */
 
 #access {
-  border: none;
+/*  border: none; */
   font-size: 15px;
   height: 42px;
   margin:auto;
-  background-color:#570055;
+/*  background-color:#570055; */
+  background-color:#d9dbdc;
   overflow: visible;
   z-index: 100;
   background-repeat: no-repeat;
@@ -216,12 +217,22 @@ html body.home div#wrapper.hfeed div#header div#access div.menu {
 	background-color: transparent;
 	font-family: Arial, Helvetica, Tahoma, Geneva, sans-serif;
 	font-size: 17px;
-	color: #ffffff;
+/*	color: #ffffff;*/
+  color: #aa67a9;
 	padding: 13px 12px 12px 12px;
 }
 
+.sf-menu a:hover{
+  border: none;
+  background-color: transparent;
+  font-family: Arial, Helvetica, Tahoma, Geneva, sans-serif;
+  font-size: 17px;
+  color: #5d4b9e;
+  padding: 13px 12px 12px 12px;
+}
 .current-menu-item a {
-    color:#b758ad !important;
+/*    color:#b758ad !important;*/
+    color:#5d4b9e !important;
 }
 
 /*
