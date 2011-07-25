@@ -17,7 +17,7 @@ function test_add_theme_page() {
 function test_theme_page_head() {
 ?>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
   jQuery(document).ready(function($) {
 
     jQuery('form#test_form').submit(function() {
