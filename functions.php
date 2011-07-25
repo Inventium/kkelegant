@@ -167,8 +167,6 @@ function kk_create_service_type() {
 }
 add_action( 'init', 'kk_create_service_type' );
 
-
-/*
 //customizar footer
 function kk_footer($thm_footertext) {
 
@@ -182,7 +180,6 @@ EOF;
   return $thm_footertext;
 }
 add_filter('thematic_footertext', 'kk_footer');
-*/
 
 function kk_format_link($url, $anchor, $class = '', $title = '') {
     $link = <<<EOL
