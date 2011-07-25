@@ -52,11 +52,11 @@ function add_custom_logo() {?>
 function remove_thematic_actions() {
 	remove_action('thematic_header','thematic_blogtitle', 3);
 	remove_action('thematic_header','thematic_blogdescription', 5);
-  remove_action('thematic_header','thematic_access', 9);
+  //remove_action('thematic_header','thematic_access', 9);
 }
 add_action('init','remove_thematic_actions');
 add_action('thematic_header','add_custom_logo', 3);
-add_action('thematic_header','childtheme_page_menu', 9);
+//add_action('thematic_header','childtheme_page_menu', 9);
 
 
 
@@ -211,6 +211,6 @@ if (file_exists(KK_TEMPLATEPATH . '/kkoptions.php')) {
 
 
 if (file_exists(KK_TEMPLATEPATH . '/kkmenu.php')) {
-  include(KK_TEMPLATEPATH . '/kkmenu.php');
+//  include(KK_TEMPLATEPATH . '/kkmenu.php');
 }
 

@@ -53,6 +53,7 @@ body {
 #access {
     position:relative;
     overflow:hidden;
+    width:900px;
 }
 .menu {
     width:900px;
@@ -137,14 +138,13 @@ body {
 
 #access {
   border: none;
-  font-size: 13px;
+  font-size: 15px;
   height: 42px;
+  margin:auto;
+  background-color:#570055;
   overflow: visible;
   z-index: 100;
-	margin: 10px 0 10px 0px;
-  background-position: 50% 0%;
-	background-repeat: no-repeat;
-	background-color: transparent;
+  background-repeat: no-repeat;
 }
 
 /*
@@ -159,6 +159,10 @@ html body.home div#wrapper.hfeed div#header div#access div.menu {
 #blog-title {visibility: hidden;}
 #blog-description {visibility: hidden;}
 */
+
+
+/* ----- Primary Navigation Menu -------  */
+
 
 
 .sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
@@ -185,10 +189,6 @@ html body.home div#wrapper.hfeed div#header div#access div.menu {
 	border: none;
 	background-color: transparent;
 	margin-top:10px;
- -webkit-box-shadow: 2px 2px 8px #aaa;
- -moz-box-shadow: 2px 2px 8px #aaa;
-	box-shadow: 2px 2px 8px #aaa;
-	-pie-box-shadow: #aaa 2px 2px 8px;
 }
 
 .menu ul.children li.page_item {
@@ -211,13 +211,17 @@ html body.home div#wrapper.hfeed div#header div#access div.menu {
 	background-repeat: repeat-x;
 }
 
-.windows .sf-menu a {
+.sf-menu a , .sf-menu a:visited{
 	border: none;
 	background-color: transparent;
 	font-family: Arial, Helvetica, Tahoma, Geneva, sans-serif;
 	font-size: 17px;
 	color: #ffffff;
 	padding: 13px 12px 12px 12px;
+}
+
+.current-menu-item a {
+    color:#b758ad !important;
 }
 
 /*
