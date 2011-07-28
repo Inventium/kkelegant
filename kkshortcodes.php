@@ -30,7 +30,7 @@ function kk_haircut_price_table() {
   $updo          = (isset($options['updo']))           ? $options['updo']           : $default;
   
   $prices = <<<EOD
-<div id="haircut-price-table">
+<div class="price-div" id="haircut-price-table">
 <table class="price-table">
 <tbody>
 <tr><th>Haircut</td><th>Price</td></tr>
@@ -76,7 +76,7 @@ function kk_massage_price_list() {
   $massage30 = (isset($options['massage30']))   ? $options['massage30']   : $default;
     
   $prices = <<<EOD
-<div id="massage-price-table">
+<div class="price-div" id="massage-price-table">
 <table class="price-table">
 <tbody>
 <tr>
@@ -104,7 +104,7 @@ EOD;
 add_shortcode('massage-price-list','kk_massage_price_list');
 
 
-function kk_waxing_price_list() {
+function kk_waxing_price_table() {
 
   $default = 'n/a';
   $options = get_option('kkelegant_options');
@@ -131,7 +131,7 @@ function kk_waxing_price_list() {
   $chest           = (isset($options['chest']))           ? $options['chest']           : $default;
 
   $prices = <<<EOD
-<div id="waxing-price-table">
+<div class="price-div" id="waxing-price-table">
 <table class="price-table">
 <tbody>
 <tr><th>Waxing Service</td><th>Price</td></tr>
@@ -161,7 +161,7 @@ function kk_waxing_price_list() {
 EOD;
   return $prices;  
 } 
-add_shortcode('waxing-price-list','kk_waxing_price_list');
+add_shortcode('waxing-price-table','kk_waxing_price_table');
 
 
 function kk_facebody_price_list() {
@@ -178,7 +178,7 @@ function kk_facebody_price_list() {
   $bodyglow30   = (isset($options['bodyglow30']))   ? $options['bodyglow30']   : $default;
 
   $prices = <<<EOD
-<div id="facebody-price-table">
+<div class="price-div" id="facebody-price-table">
 <table class="price-table">
 <tbody>
 <tr>

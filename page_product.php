@@ -55,7 +55,7 @@
         echo '<h2 class="entry_title">';        
         echo kk_format_link(get_term_link( $brand), $brand->name, '', '');
         echo '</h2>';
-        echo '<div class="entry_content">';
+        echo '<div class="entry_content product description">';
         echo $brand->description;
         echo '</div></div>';
     }

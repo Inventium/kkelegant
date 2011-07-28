@@ -56,13 +56,11 @@
               echo '<h2>';
               echo kk_format_link(get_permalink( $brand), get_the_title(), '', '');
               echo '</h2>';
+              echo '<div>';
               the_excerpt();
+              echo '</div>';
           endwhile;
-
-// Reset Post Data
-wp_reset_postdata();
-
-
+          wp_reset_postdata();
 
           thematic_belowpost();
           // calling the widget area 'page-bottom'

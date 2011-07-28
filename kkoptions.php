@@ -475,7 +475,7 @@ function kk_register_mysettings() {
    add_settings_field('facial75', "Facial - 75 m" ,'kk_facial75', $kk_options_file, 'kkfaceandbody');
    add_settings_field('back30', "Back - 30 m" ,'kk_back30', $kk_options_file, 'kkfaceandbody');
    add_settings_field('bodymasque60', "Body Masque - 60 m" ,'kk_bodymasque60', $kk_options_file, 'kkfaceandbody');
-   add_settings_field('bodyglow30', "Body Glow - 30 m" ,'kk_bodyglow0', $kk_options_file, 'kkfaceandbody');
+   add_settings_field('bodyglow30', "Body Glow - 30 m" ,'kk_bodyglow30', $kk_options_file, 'kkfaceandbody');
 
    //add_settings_section('kkspecialties', '', 'kk_specialties_text', $kk_options_file);
 }

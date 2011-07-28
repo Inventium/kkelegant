@@ -1,3 +1,4 @@
+
 <?php
 
 // http://themeshaper.com/forums/
@@ -161,7 +162,8 @@ function kk_create_service_type() {
       ),
     'public'      => true,
     'has_archive' => true,
-    'taxonomies'  => array('post_tag')
+    'taxonomies'  => array('post_tag'),
+    'supports'    => $supports
     )
   );
 }
@@ -210,8 +212,94 @@ if (file_exists(KK_TEMPLATEPATH . '/kkoptions.php')) {
   include(KK_TEMPLATEPATH . '/kkoptions.php');
 }
 
+if (file_exists(KK_TEMPLATEPATH . '/kerastase-widget.php')) {
+  include(KK_TEMPLATEPATH . '/kerastase-widget.php');
+}
 
 if (file_exists(KK_TEMPLATEPATH . '/kkmenu.php')) {
 //  include(KK_TEMPLATEPATH . '/kkmenu.php');
 }
+
+remove_filter( 'pre_term_description', 'wp_filter_kses' );
+remove_filter( 'term_description', 'wp_kses_data' );
+
+
+/****  Admin bar convenience ***/
+
+
+/**
+ * Checks if we should add links to the bar.
+ */
+function pbd_admin_bar_init() {
+  // Is the user sufficiently leveled, or has the bar been disabled?
+  if (!is_super_admin() || !is_admin_bar_showing() )
+    return;
+ 
+  // Good to go, lets do this!
+  add_action('admin_bar_menu', 'pbd_admin_bar_links', 1000);
+  add_action('admin_bar_menu', 'pbd_remove_default_links', 1000);
+}
+
+add_action('admin_bar_init', 'pbd_admin_bar_init');
+
+
+
+/**
+ * Adds links to the bar.
+ */
+function pbd_admin_bar_links() {
+
+  global $wp_admin_bar;
+  
+  // Links to add, in the form: 'Label' => 'URL'
+  $links = array(
+    'Change haircut prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkhaircuts',
+    'Change waxing prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkwaxing',
+    'Change massage prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkmassage',
+    'Change face and body prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkfaceandbody'
+          );
+  
+    // Add the Parent link.
+  $wp_admin_bar->add_menu( array(
+    'title' => 'Stats',
+    'href' => false,
+    'id' => 'pbd_links',
+    'href' => false
+  ));
+ 
+  /**
+   * Add the submenu links.
+   */
+  foreach ($links as $label => $url) {
+    $wp_admin_bar->add_menu( array(
+      'title' => $label,
+      'href' => $url,
+      'parent' => 'pbd_links',
+      'meta' => array('target' => '_blank')
+    ));
+  }
+}
+
+
+/**
+ * Remove default admin links.
+ */
+function pbd_remove_default_links() {
+  global $wp_admin_bar;
+ 
+  /* Array of links to remove. Choose from:
+  'my-account-with-avatar', 'my-account', 'my-blogs', 'edit', 'new-content', 'comments', 'appearance', 'updates', 'get-shortlink'
+   */
+  //$remove = array('appearance');
+ 
+  if(empty($remove) )
+    return;
+ 
+  foreach($remove as $item) {
+    $wp_admin_bar->remove_menu($item);  
+  }
+}
+  
+  
+
 

@@ -106,6 +106,13 @@ body {
     margin:0 auto;
 }
 
+
+h2 {
+  display:inline;
+}
+
+
+
 /* =Page Templates
 -------------------------------------------------------------- */
 
@@ -468,7 +475,6 @@ div.billboard {
   box-shadow: 5px 5px 5px #888;   
  -moz-border-radius: 7px; 
  -webkit-border-radius: 7px; 
- -khtml-border-radius: 7px;    
 /*
   text-shadow: #FFE 1px 1px 0px; 
   outline-color: #1B1818;
@@ -485,7 +491,13 @@ div#haircut-price-table {
   text-align: center;
 }
 
+div.price-div {
+/*  margin-left: 30%;*/
+  float: right;
+  width: 45%;
+}
+
 table.price-table {
-  margin-left: 30%;
+/*  margin-left: 30%;*/
   background-color: #eee;
 }
