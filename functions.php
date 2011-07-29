@@ -251,20 +251,20 @@ function pbd_admin_bar_links() {
 
   global $wp_admin_bar;
   
+  $adminurl = get_bloginfo('url');
   // Links to add, in the form: 'Label' => 'URL'
   $links = array(
     'Change haircut prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkhaircuts',
     'Change waxing prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkwaxing',
     'Change massage prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkmassage',
     'Change face and body prices' => get_bloginfo('url') .'/wp-admin/themes.php?page=kkoptions.php#kkfaceandbody'
-          );
+    );
   
     // Add the Parent link.
   $wp_admin_bar->add_menu( array(
-    'title' => 'Stats',
+    'title' => 'Salon Prices',
     'href' => false,
-    'id' => 'pbd_links',
-    'href' => false
+    'id' => 'pbd_links'
   ));
  
   /**
@@ -278,6 +278,12 @@ function pbd_admin_bar_links() {
       'meta' => array('target' => '_blank')
     ));
   }
+
+  $wp_admin_bar->add_menu(  array(
+      'title' => 'News item',
+      'href' => $adminurl . '/wp-admin/post-new.php',
+      'parent' => 'new-content'
+    ));
 }
 
 
@@ -290,7 +296,7 @@ function pbd_remove_default_links() {
   /* Array of links to remove. Choose from:
   'my-account-with-avatar', 'my-account', 'my-blogs', 'edit', 'new-content', 'comments', 'appearance', 'updates', 'get-shortlink'
    */
-  //$remove = array('appearance');
+  $remove = array('appearance', 'comments');
  
   if(empty($remove) )
     return;
@@ -298,6 +304,14 @@ function pbd_remove_default_links() {
   foreach($remove as $item) {
     $wp_admin_bar->remove_menu($item);  
   }
+
+  $wp_admin_bar->remove_menu('new-plugin');
+  $wp_admin_bar->remove_menu('new-media');
+  $wp_admin_bar->remove_menu('new-link');
+  $wp_admin_bar->remove_menu('new-user');
+  $wp_admin_bar->remove_menu('new-theme');
+  $wp_admin_bar->remove_menu('new-post');
+
 }
   
   
