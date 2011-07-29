@@ -183,7 +183,8 @@ add_filter('thematic_widgetized_areas', 'remove_widgetized_area');
 function kk_footer($thm_footertext) {
 
   $thm_footertext = <<<EOF
-<div>Copyright © 2009-[the-year] <a title="Katherine Kendall Salon & Spa" href="http://katherinekendall.com/">Katherine Kendall Salon & Spa</a> - All Rights Reserved - <a title="RSS" href="http://katherinekendall.com/feed/rss/">Entries (RSS)</a></div>
+<div>Copyright © 2009-[the-year] <a title="Katherine Kendall Salon & Spa" href="http://katherinekendall.com/">Katherine Kendall Salon & Spa</a> - All Rights Reserved 
+</div>
 <div><a href="http://katherinekendall.com/terms-conditions/">Terms & Conditions</a> 
 | <a href="http://katherinekendall.com/privacy-policy/">Privacy Policy</a> 
 | <a href="http://katherinekendall.com/disclaimer">Disclaimer</a>. 
