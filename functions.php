@@ -1,4 +1,3 @@
-
 <?php
 
 // http://themeshaper.com/forums/
